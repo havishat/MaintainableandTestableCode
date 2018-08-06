@@ -110,6 +110,45 @@ namespace maintainablecode
         }
 
 
+        /// <summary>
+        /// Testable code
+        /// </summary>
+        public class C1
+        {
+            public void DoStuff() { }
+        }
+        public class C2
+        {
+            public void DoStuff() { }
+        }
+        public class C3
+        {
+            public void DoStuff() { }
+        }
+
+        public class C4
+        {
+            private C1 c1;
+            private C2 c2;
+            private C3 c3;
+
+            public C4(C1 c1, C2 c2, C3 c3)
+            {
+                this.c1 = c1;
+                this.c2 = c2;
+                this.c3 = c3;
+            }
+
+            public void DoStuff()
+            {
+               
+                c1.DoStuff();
+                c2.DoStuff();
+                c3.DoStuff();
+            }
+        }
+
+
 
     }
 }
