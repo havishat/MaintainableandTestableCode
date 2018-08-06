@@ -1,20 +1,33 @@
 using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Configuration;
 
 
 namespace maintainablecode
+
 {
+
+    enum jobTypes {
+        PM,
+        DEV,
+        Others
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             Console.ReadKey();
+            object ConfigurationManager = null;
+            
         }
+
 
         /// <summary>
         /// checking equals program is getting accessed to only object Program and if it is not to Prgrams then it will return false
@@ -78,15 +91,20 @@ namespace maintainablecode
         {
 
             const string welcomChort = "hello Cohort";
+            
             const int DurationSleep = 2000;
             Console.WriteLine(welcomChort);
             Thread.Sleep(DurationSleep);
             
 
-            var jobTypes = new string[] { "PM", "Dev", "Other" };
-            Console.WriteLine("The job types are:");
-            foreach (var type in jobTypes)
+           // var jobTypes = new string[] { "PM", "Dev", "Other" };
+            const string JobType = "The job types are:";
+
+            Console.WriteLine(JobType);
+            foreach (var type in Enum.GetNames(typeof(jobTypes)){
                 Console.WriteLine(type);
+            }
+               
 
             Console.WriteLine("Goodbye Cohort!");
         }
