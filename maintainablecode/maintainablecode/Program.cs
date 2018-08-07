@@ -132,6 +132,7 @@ namespace maintainablecode
             private C2 c2;
             private C3 c3;
 
+            //constructor injection
             public C4(C1 c1, C2 c2, C3 c3)
             {
                 this.c1 = c1;
@@ -139,7 +140,8 @@ namespace maintainablecode
                 this.c3 = c3;
             }
 
-            public void DoStuff()
+            // Method injection
+            public void DoStuff(C1 c1, C2 c2, C3 c3)
             {
                
                 c1.DoStuff();
@@ -147,6 +149,8 @@ namespace maintainablecode
                 c3.DoStuff();
             }
         }
+
+
 
 
 
